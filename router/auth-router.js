@@ -1,13 +1,10 @@
 const express = require("express")
+const {home,register} = require('../controller/auth-controller')
 
 const router = express.Router();
 
-router.route("/").get((req,res)=>{
-    res.status(200).send("hello Omnath from router")
-})
+router.route("/").get(home)
+router.route("/register").post(register)
 
-router.route("/further").get((req,res)=>{
-    res.status(200).send("hello Omnath from router for further")
-})
 
 module.exports=router;
