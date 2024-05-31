@@ -13,5 +13,9 @@ router
     .route("/login")
     .post(validate.loginValidate(schema.loginschema),authrouter.login)
 
+router
+    .route('/contact')
+    .post(validate.contactValidate(schema.contactSchema),authrouter.service)
+
 
 module.exports=router;

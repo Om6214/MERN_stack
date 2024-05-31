@@ -1,4 +1,5 @@
 const User = require("../model/user_model")
+const Contact = require("../model/contact_model")
 const bcrypt = require("bcrypt")
 const home = async(req,res)=>{
     try {
@@ -53,9 +54,15 @@ const login = async(req,res) =>{
     }
 }
 
-const contact = ()=>{
-
+const service = async(req,res)=>{
+    try {
+        const{Name,Email,Message}=req.body;
+        await Contact.create({Name,Email,Message})
+        res.status(200).json({"message":"contact form submitted"})
+    } catch (error) {
+        res.status(400).json({"msg":`${error}`})
+    }
 }
 
-module.exports={home,register,login,contact};
+module.exports={home,register,login,service};
 
