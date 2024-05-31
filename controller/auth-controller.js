@@ -53,6 +53,9 @@ const login = async(req,res) =>{
     }
 }
 
+const contact = ()=>{
 
-module.exports={home,register,login};
+}
+
+module.exports={home,register,login,contact};
 
