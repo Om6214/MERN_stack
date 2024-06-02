@@ -1,0 +1,16 @@
+*{
+    margin: 0;
+    padding:0;
+    box-sizing: border-box;
+}
+.container{
+    max-width: 140rem;
+    padding: 1.2rem 2.4rem;
+    border: 2px solid red;
+    display: flex;
+    justify-content:space-between;
+}
+ul{
+    display: flex;
+    gap : 3.2rem
+}
