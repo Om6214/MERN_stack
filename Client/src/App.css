@@ -37,4 +37,19 @@
       flex: 100%;
     }
   }
-  
+  .btn{
+    background-color: aquamarine;
+  }
+  .btn:hover{
+    background-color: rgb(172, 245, 221);
+  }
+  form {
+    display: flex;
+    flex-direction: column;
+  }
+  .d-flex {
+    justify-content: center;
+  }
+  #reg{
+    background-color: rgb(178, 145, 238);
+  }

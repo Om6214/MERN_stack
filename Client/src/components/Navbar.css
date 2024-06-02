@@ -5,12 +5,43 @@
 }
 .container{
     max-width: 140rem;
-    padding: 1.2rem 2.4rem;
-    border: 2px solid red;
+    padding: 0.2rem 2.4rem;
+    background-color: purple;
     display: flex;
     justify-content:space-between;
 }
 ul{
     display: flex;
-    gap : 3.2rem
+    gap : 3.2rem;
+    list-style-type: none;
+      
 }
+li{
+    margin-top: 10px;
+    text-decoration: none;
+}
+a{
+    text-decoration: none;
+    font-size: 15px;
+    color: white;
+}
+#name{
+    font-family: 'Titillium Web';
+    text-transform: uppercase;
+    text-align: center;
+    font-weight: 600;
+}
+.naav {
+    font-family: 'Titillium Web';
+    text-transform: uppercase;
+    text-align: center;
+    font-weight: 600;
+}
+
+a:focus{
+    color:rgb(195, 167, 167)
+}
+
+  .left {
+    margin-top: 11px;
+  }

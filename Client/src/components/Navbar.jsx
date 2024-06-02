@@ -4,12 +4,12 @@ import "./Navbar.css"
 export const Navbar =()=>{
     return(
         <>
-            <div className="container">
+            <div className="container sticky-top">
                 <div className="left">
-                    <a href="/">Omnath</a>
+                    <a id="name" href="/">Omnath</a>
                 </div>
                 <div className="right">
-                    <ul>
+                    <ul className="naav">
                         <li><NavLink to="/">Home</NavLink></li>
                         <li><NavLink to="/about">About</NavLink></li>
                         <li><NavLink to="/contact">Contact</NavLink></li>

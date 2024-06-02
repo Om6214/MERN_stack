@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import regimg from '/reg.avif';
+import regimg from '/file.png';
 import '../App.css';
 
 const Register = () => {
@@ -24,12 +24,12 @@ const Register = () => {
   };
 
   return (
-    <div className="container">
+    <div id='reg' className="container">
       <div className="img-fluid">
         <img src={regimg} alt="Registration" />
       </div>
       <div className="form">
-        <h1>Registration Form</h1>
+        <h1 style={{textAlign:"center"}}>Registration Form</h1>
         <form onSubmit={handleSubmit}>
           <div className="mb-3">
             <label htmlFor="exampleInputName1" className="form-label">Name</label>
@@ -48,7 +48,9 @@ const Register = () => {
             <label htmlFor="exampleInputPassword1" className="form-label">Password</label>
             <input type="password" className="form-control" id="exampleInputPassword1" name="Password" value={user.Password} onChange={handleChange} />
           </div>
-          <button type="submit" className="btn btn-primary">Submit</button>
+          <div className='d-flex'>
+            <button type="submit" className="btn">Submit</button>
+          </div>
         </form>
       </div>
     </div>
