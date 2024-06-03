@@ -64,7 +64,8 @@
     justify-content: center;
   }
   #reg{
-    background-color: #99ccc0;
+    background-color: #000000;
+    color: white;
   }
 .card{
   width: 150px;

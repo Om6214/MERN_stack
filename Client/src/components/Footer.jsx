@@ -1,4 +1,5 @@
 import React from "react";
+import { NavLink } from "react-router-dom";
 import "./Footer.css";
 
 const Footer = () => {
@@ -11,40 +12,39 @@ const Footer = () => {
             <h1>GadgetGrooves</h1>
           </div>
           <p>
-            Designed and built with all the love in the world by the Bootstrap
-            team with the help of our contributors.
+          Discover the latest in electronics at unbeatable prices. From cutting-edge gadgets to everyday essentials, we bring you top brands and innovative technology.
           </p>
-          <p>Code licensed MIT, docs CC BY 3.0.</p>
+          <p>© 2024 Your Company Name. All rights reserved. Privacy Policy | Terms of Service</p>
         </div>
         <div id="right">
           <div className="my-account">
             <h3>MY ACCOUNT</h3>
             <ul>
-              <li><a href="#">Orders</a></li>
-              <li><a href="#">My Account</a></li>
-              <li><a href="#">Checkout</a></li>
-              <li><a href="#">Downloads</a></li>
-              <li><a href="#">Account details</a></li>
+              <li><NavLink id="bn" to="#">Orders</NavLink></li>
+              <li><NavLink id="bn" to="#">My Account</NavLink></li>
+              <li><NavLink id="bn" to="#">Checkout</NavLink></li>
+              <li><NavLink id="bn" to="#">Downloads</NavLink></li>
+              <li><NavLink id="bn" to="#">Account details</NavLink></li>
             </ul>
           </div>
           <div className="categories">
             <h3>CATEGORIES</h3>
             <ul>
-              <li><a href="#">Hydraulic</a></li>
-              <li><a href="#">Atomtronics</a></li>
-              <li><a href="#">Cryotronics</a></li>
-              <li><a href="#">Induction</a></li>
-              <li><a href="#">Spintronics</a></li>
-              <li><a href="#">Pro Electron</a></li>
+              <li><NavLink id="bn" to="#">Hydraulic</NavLink></li>
+              <li><NavLink id="bn" to="#">Atomtronics</NavLink></li>
+              <li><NavLink id="bn" to="#">Cryotronics</NavLink></li>
+              <li><NavLink id="bn" to="#">Induction</NavLink></li>
+              <li><NavLink id="bn" to="#">Spintronics</NavLink></li>
+              <li><NavLink id="bn" to="#">Pro Electron</NavLink></li>
             </ul>
           </div>
           <div className="information">
             <h3>INFORMATION</h3>
             <ul>
-              <li><a href="#">About Us</a></li>
-              <li><a href="#">Delivery Information</a></li>
-              <li><a href="#">Privacy Policy</a></li>
-              <li><a href="#">Contact Us</a></li>
+              <li><NavLink id="bn" to="#">About Us</NavLink></li>
+              <li><NavLink id="bn" to="#">Delivery Information</NavLink></li>
+              <li><NavLink id="bn" to="#">Privacy Policy</NavLink></li>
+              <li><NavLink id="bn" to="#">Contact Us</NavLink></li>
             </ul>
           </div>
         </div>

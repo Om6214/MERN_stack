@@ -8,7 +8,7 @@
   }
   
   #card {
-    background: #f9f9f9;
+    background: linear-gradient(27deg, rgba(103,54,136,1) 0%, rgba(1,2,8,1) 46%);
     border: 1px solid #ddd;
     border-radius: 8px;
     overflow: hidden;
@@ -62,3 +62,34 @@
     background-color: #218838;
   }
   
+  @media (max-width: 768px) {
+    .container-fluid {
+      grid-template-columns: 1fr;
+      height: auto;
+      padding: 10px;
+    }
+  
+    #card {
+      padding: 15px;
+      margin-bottom: 20px;
+    }
+  
+    #prod {
+      max-width: 100%;
+    }
+  
+    #card h3 {
+      font-size: 1.5em;
+    }
+  
+    #card p {
+      font-size: 1em;
+    }
+  
+    .buy-btn,
+    .add-to-cart-btn {
+      font-size: 1em;
+      padding: 8px 16px;
+      margin: 5px;
+    }
+  }

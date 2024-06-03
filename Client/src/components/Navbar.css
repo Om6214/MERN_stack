@@ -27,11 +27,11 @@ li {
 a {
     text-decoration: none;
     font-size: 15px;
-    color: white;
+    color: rgb(23, 151, 211);
 }
 
 #name {
-    font-family: 'Titillium Web';
+    font-family:Verdana, Geneva, Tahoma, sans-serif;
     text-transform: uppercase;
     text-align: center;
     font-weight: 600;

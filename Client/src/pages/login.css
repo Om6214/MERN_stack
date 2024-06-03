@@ -25,7 +25,8 @@
     }
   }
   .container-fluid.vh-100.d-flex.align-items-center {
-    background-color: #99ccc0;
+    background-color: #000000;
+    color: white;
   }  
 
   .btn {

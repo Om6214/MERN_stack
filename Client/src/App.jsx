@@ -7,6 +7,7 @@ import Service from "./pages/Service"
 import Login from "./pages/Login"
 import Register from "./pages/Register"
 import { Navbar } from "./components/Navbar"
+import Error from "./components/Error"
 
 const App = ()=>{
   return(
@@ -19,6 +20,7 @@ const App = ()=>{
         <Route path="/service" element={<Service/>}/>
         <Route path="/login" element={<Login/>}/>
         <Route path="/register" element={<Register/>}/>
+        <Route path="*" element={<Error/>}/>
       </Routes>
     </BrowserRouter>
   )

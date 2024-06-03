@@ -22,7 +22,7 @@ export const Navbar = () => {
                         <span className="bar"></span>
                         <span className="bar"></span>
                     </button>
-                    <ul className={`naav ${isOpen ? 'open' : ''}`}>
+                    <ul id='navlink' className={`naav ${isOpen ? 'open' : ''}`}>
                         <li><NavLink to="/" onClick={toggleMenu}>Home</NavLink></li>
                         <li><NavLink to="/about" onClick={toggleMenu}>About</NavLink></li>
                         <li><NavLink to="/contact" onClick={toggleMenu}>Contact</NavLink></li>
