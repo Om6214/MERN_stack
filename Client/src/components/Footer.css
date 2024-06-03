@@ -1,0 +1,124 @@
+/* Footer.css */
+
+footer {
+    background-color: #000000;
+    padding: 20px 50px;
+  }
+  
+  .footer-container {
+    display: grid;
+    grid-template-columns: 1fr 3fr;
+    gap: 20px;
+  }
+  
+  #left {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    color: white;
+  }
+  
+  .collect {
+    display: flex;
+    align-items: center;
+  }
+  
+  .collect img {
+    width: 50px;
+    margin-right: 10px;
+  }
+  
+  #right {
+    display: grid;
+    grid-template-rows: auto auto;
+    gap: 20px;
+    color: white;
+    margin-left: 88px;
+  }
+  
+  .header-row {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+  }
+  
+  .content-row {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+  }
+  
+  #right div {
+    display: flex;
+    flex-direction: column;
+  }
+  
+  #right h3 {
+    margin-bottom: 15px;
+  }
+  
+  #right ul {
+    list-style: none;
+    padding: 0;
+  }
+  
+  #right ul li {
+    margin: 5px 0;
+  }
+  
+  #right ul li a {
+    text-decoration: none;
+    color: #007bff;
+  }
+  
+  #right ul li a:hover {
+    text-decoration: underline;
+    color: #007bff;
+  }
+  
+  /* Responsive Design for Mobile View */
+  @media (max-width: 768px) {
+    .footer-container {
+      grid-template-columns: 1fr;
+    }
+  
+    #right {
+      display: none; /* Hide the right column for mobile view */
+    }
+  
+    .header-row,
+    .content-row {
+      display: grid;
+      grid-template-columns: 1fr;
+      gap: 10px;
+    }
+  
+    .header-row div,
+    .content-row div {
+      display: flex;
+      flex-direction: row;
+      justify-content: space-between;
+    }
+  
+    #left {
+      margin-left: 0; /* Remove margin for better alignment */
+    }
+  
+    #left div {
+      margin-bottom: 0; /* Remove margin bottom for better alignment */
+    }
+  
+    #left ul li {
+      margin: 0; /* Remove margin for better alignment */
+    }
+  
+    #left ul li a {
+      display: block; /* Display as block to take full width */
+      padding: 5px 0; /* Add padding for better touch experience */
+      color: white; /* Adjust text color */
+    }
+  
+    #left ul li a:hover {
+      text-decoration: underline;
+      color: #007bff; /* Change color on hover */
+    }
+  }
+  

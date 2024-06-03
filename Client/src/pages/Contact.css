@@ -1,0 +1,41 @@
+/* login.css */
+.container-fluid {
+    height: 100vh; /* Ensure full viewport height */
+  }
+  
+  .img-fluid {
+    max-width: 100%;
+    height: auto;
+  }
+  h1{
+    margin-bottom: 29px;
+  }
+  
+  .form-text {
+    font-size: 0.875rem;
+  }
+  
+  @media (max-width: 767.98px) {
+    .container-fluid {
+      padding: 1rem;
+    }
+    .col-md-6 {
+      flex: 0 0 100%;
+      max-width: 100%;
+    }
+    .form-text {
+      font-size: 0.75rem;
+    }
+  }
+  .container-fluid.vh-100.d-flex.align-items-center {
+    background-color: #99ccc0;
+  }  
+
+  .btn {
+    background-color: #b53cb5;
+    width: 150px;
+  }  
+
+  .col-md-6{
+    flex-direction: column;
+  }

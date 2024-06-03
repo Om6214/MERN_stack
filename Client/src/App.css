@@ -4,6 +4,18 @@
     flex-wrap: wrap;
     width: 100%; /* Ensures the container takes the full viewport height */
   }
+
+  body{
+    background-image: url("https://t4.ftcdn.net/jpg/01/93/30/87/240_F_193308746_qzYdWJo8ZIP90POXtJ6Dy7L8PeaIvkHb.jpg");
+      /* Set a specific height */
+  min-height: 500px;
+
+  /* Create the parallax scrolling effect */
+  background-attachment: fixed;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  }
   
   .img-fluid {
     flex: 1;
@@ -38,10 +50,11 @@
     }
   }
   .btn{
-    background-color: aquamarine;
+    background-color: purple;
+    color: white;
   }
   .btn:hover{
-    background-color: rgb(172, 245, 221);
+    background-color: rgb(141, 99, 168);
   }
   form {
     display: flex;
@@ -51,5 +64,17 @@
     justify-content: center;
   }
   #reg{
-    background-color: rgb(178, 145, 238);
+    background-color: #99ccc0;
   }
+.card{
+  width: 150px;
+  margin: 20px;
+  border-radius:30%;
+  background-color: antiquewhite;
+}
+#info{
+  justify-content: center;
+}
+.row{
+  justify-content: center;
+}

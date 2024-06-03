@@ -30,7 +30,7 @@ const Register = () => {
       </div>
       <div className="form">
         <h1 style={{textAlign:"center"}}>Registration Form</h1>
-        <form onSubmit={handleSubmit}>
+        <form onSubmit={handleSubmit} autoComplete='off'>
           <div className="mb-3">
             <label htmlFor="exampleInputName1" className="form-label">Name</label>
             <input type="text" className="form-control" id="exampleInputName1" name="Name" value={user.Name} onChange={handleChange} />
@@ -38,7 +38,7 @@ const Register = () => {
           <div className="mb-3">
             <label htmlFor="exampleInputEmail1" className="form-label">Email address</label>
             <input type="email" className="form-control" id="exampleInputEmail1" name="Email" value={user.Email} onChange={handleChange} aria-describedby="emailHelp" />
-            <div id="emailHelp" className="form-text">We'll never share your email with anyone else.</div>
+
           </div>
           <div className="mb-3">
             <label htmlFor="exampleInputPhone1" className="form-label">Phone Number</label>
@@ -49,7 +49,7 @@ const Register = () => {
             <input type="password" className="form-control" id="exampleInputPassword1" name="Password" value={user.Password} onChange={handleChange} />
           </div>
           <div className='d-flex'>
-            <button type="submit" className="btn">Submit</button>
+            <button style={{backgroundColor:"purple",color:"white",fontSize:"18px"}} type="submit" className="btn">Submit</button>
           </div>
         </form>
       </div>
