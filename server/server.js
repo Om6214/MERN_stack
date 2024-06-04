@@ -4,8 +4,20 @@ const app = express();
 const error_middleware = require('./middleware/error-middleware')
 const PORT = 3000 || process.env.PORT;
 const connectDB = require('./utils/db')
+const cors = require("cors")
 
 const router = require('./router/auth-router')
+
+
+// handling the cors error
+
+const corsOptions = {
+    origin:'http://localhost:5173',
+    methods:"GET, POST, PUT, DELETE, PATCH, HEAD",
+    credentials:true
+}
+
+app.use(cors(corsOptions));
 
 
 // this is the middleware used to deal with the json files 

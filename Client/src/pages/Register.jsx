@@ -2,6 +2,7 @@ import React, { useState } from "react";
 import regimg from "/file.png";
 import "../App.css";
 import Footer from "../components/Footer";
+import { useNavigate } from "react-router-dom";
 
 const Register = () => {
   const [user, setUser] = useState({
@@ -10,6 +11,7 @@ const Register = () => {
     Phone_number: "",
     Password: "",
   });
+  const navigate = useNavigate();
 
   const handleChange = (e) => {
     const { name, value } = e.target;
@@ -23,16 +25,20 @@ const Register = () => {
     e.preventDefault();
     console.log(user);
     try {
-      const response = await fetch("localhost:3000/register", {
+      const response = await fetch("http://localhost:3000/register", {
         method: "POST",
         headers: {
-          "Contect-Type": "application/json",
+          "Content-Type": "application/json",
         },
         body: JSON.stringify(user),
       });
-      console.log(response);
+
+      if (response.ok) {
+        setUser({ Name: "", Email: "", Phone_number: "", Password: "" });
+        navigate("/login");
+      }
     } catch (error) {
-      console.log(error);
+      console.error("Fetch error:", error);
     }
   };
 
