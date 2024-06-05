@@ -1,6 +1,7 @@
 import React, { useState } from "react";
 import "../pages/login.css";
 import Footer from "../components/Footer";
+import { useAuth } from "../storage/auth";
 
 const Contact = () => {
   const [user, setUser] = useState({
@@ -15,9 +16,36 @@ const Contact = () => {
       [name]: value,
     });
   };
-  const handleSubmit = (e) => {
+  const [userData, setuserData] = useState(true);
+
+  const { detail } = useAuth();
+
+  if (userData && detail) {
+    setUser({
+      Name: detail.Name,
+      Email: detail.Email,
+      Message: "",
+    });
+    setuserData(false);
+  }
+
+  const handleSubmit = async (e) => {
     e.preventDefault();
-    console.log(user);
+    const response = await fetch("http://localhost:3000/contact", {
+      method: "POST",
+      headers: {
+        "Content-Type": "application/json",
+      },
+      body: JSON.stringify(user),
+    });
+    if (response.ok) {
+      alert("Message sent");
+      setUser({
+        Name: detail.Name,
+        Email: detail.Email,
+        Message: "",
+      });
+    }
   };
   return (
     <>

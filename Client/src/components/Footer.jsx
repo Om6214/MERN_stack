@@ -14,7 +14,7 @@ const Footer = () => {
           <p>
           Discover the latest in electronics at unbeatable prices. From cutting-edge gadgets to everyday essentials, we bring you top brands and innovative technology.
           </p>
-          <p>© 2024 Your Company Name. All rights reserved. Privacy Policy | Terms of Service</p>
+          <p>© 2024 GadgetGrooves. All rights reserved. Privacy Policy | Terms of Service</p>
         </div>
         <div id="right">
           <div className="my-account">
@@ -41,7 +41,7 @@ const Footer = () => {
           <div className="information">
             <h3>INFORMATION</h3>
             <ul>
-              <li><NavLink id="bn" to="#">About Us</NavLink></li>
+              <li><NavLink id="bn" to="/about">About Us</NavLink></li>
               <li><NavLink id="bn" to="#">Delivery Information</NavLink></li>
               <li><NavLink id="bn" to="#">Privacy Policy</NavLink></li>
               <li><NavLink id="bn" to="#">Contact Us</NavLink></li>
