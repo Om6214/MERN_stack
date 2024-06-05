@@ -8,6 +8,7 @@ import Login from "./pages/Login"
 import Register from "./pages/Register"
 import { Navbar } from "./components/Navbar"
 import Error from "./components/Error"
+import Logout from "./pages/Logout"
 
 const App = ()=>{
   return(
@@ -20,6 +21,7 @@ const App = ()=>{
         <Route path="/service" element={<Service/>}/>
         <Route path="/login" element={<Login/>}/>
         <Route path="/register" element={<Register/>}/>
+        <Route path="/logout" element={<Logout/>}/>
         <Route path="*" element={<Error/>}/>
       </Routes>
     </BrowserRouter>

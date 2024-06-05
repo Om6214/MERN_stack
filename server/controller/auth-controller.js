@@ -66,5 +66,15 @@ const service = async(req,res)=>{
     }
 }
 
-module.exports={home,register,login,service};
+const user = async(req,res) =>{
+    try {
+        const userData = req.user;
+        return res.status(200).json({msg:userData})
+    } catch (error) {
+        res.status(400).json({msg:"invalid http request"})
+    }
+}
+
+
+module.exports={home,register,login,service,user};
 
