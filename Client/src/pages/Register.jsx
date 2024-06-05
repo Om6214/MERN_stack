@@ -3,6 +3,7 @@ import regimg from "/file.png";
 import "../App.css";
 import Footer from "../components/Footer";
 import { useNavigate } from "react-router-dom";
+import { useAuth } from "../storage/auth";
 
 const Register = () => {
   const [user, setUser] = useState({
@@ -21,6 +22,9 @@ const Register = () => {
     });
   };
 
+  // through useContext api we are getting the token data
+  const storetkeninLS = useAuth();
+
   const handleSubmit = async (e) => {
     e.preventDefault();
     console.log(user);
@@ -34,7 +38,9 @@ const Register = () => {
       });
 
       if (response.ok) {
-        setUser({ Name: "", Email: "", Phone_number: "", Password: "" });
+        const data = await response.json()
+        storetkeninLS(data.token)
+        setUser({ Name: "", Email: "", Phone_number: "",  Password: "" });
         navigate("/login");
       }
     } catch (error) {

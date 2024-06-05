@@ -2,6 +2,7 @@ import React, { useState } from "react";
 import logimg from "/file(1).png";
 import "../pages/login.css";
 import Footer from "../components/Footer";
+import { useNavigate } from "react-router-dom";
 
 const Login = () => {
   const [user, setUser] = useState({
@@ -15,9 +16,25 @@ const Login = () => {
       [name]: value,
     });
   };
-  const handleSubmit = (e) => {
+  const navigate = useNavigate()
+  const handleSubmit = async(e) => {
     e.preventDefault();
     console.log(user);
+    try {
+      const response = await fetch("http://localhost:3000/login", {
+        method: "POST",
+        headers: {
+          "Content-type": "application/json",
+        },
+        body: JSON.stringify(user),
+      });
+      if(response.ok){
+        alert("login successfull")
+        navigate('/')
+      }
+    } catch (error) {
+      console.log(error);
+    }
   };
   return (
     <>
@@ -29,6 +46,7 @@ const Login = () => {
           <div className="col-md-6 d-flex align-items-center justify-content-center">
             <h1>Login</h1>
             <form
+              autoComplete="off"
               onSubmit={handleSubmit}
               className="w-75 d-flex flex-direction-col justify-content-center"
             >
