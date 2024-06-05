@@ -24,7 +24,14 @@ const Contact = () => {
       <div className="container-fluid vh-100 d-flex align-items-center">
         <div className="row w-100">
           <div className="col-md-6 d-none d-md-flex align-items-center justify-content-center">
-            <img src="/cont.png" alt="login" className="img-fluid" />
+            <iframe
+              src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3635.590112894604!2d73.07610224607842!3d19.159900325257073!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3be7bff002c14769%3A0x9da6d7db2f2157ae!2sChandresh%20Manor%20Society!5e0!3m2!1sen!2sin!4v1717420732928!5m2!1sen!2sin"
+              width="100%"
+              height="450"
+              allowfullscreen
+              loading="lazy"
+              referrerpolicy="no-referrer-when-downgrade"
+            ></iframe>
           </div>
           <div className="col-md-6 d-flex align-items-center justify-content-center">
             <h1>Contact Us</h1>
@@ -90,14 +97,6 @@ const Contact = () => {
           </div>
         </div>
       </div>
-      <iframe
-        src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3635.590112894604!2d73.07610224607842!3d19.159900325257073!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3be7bff002c14769%3A0x9da6d7db2f2157ae!2sChandresh%20Manor%20Society!5e0!3m2!1sen!2sin!4v1717420732928!5m2!1sen!2sin"
-        width="100%"
-        height="450"
-        allowfullscreen
-        loading="lazy"
-        referrerpolicy="no-referrer-when-downgrade"
-      ></iframe>
       <Footer />
     </>
   );

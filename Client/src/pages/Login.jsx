@@ -3,6 +3,7 @@ import logimg from "/file(1).png";
 import "../pages/login.css";
 import Footer from "../components/Footer";
 import { useNavigate } from "react-router-dom";
+import { useAuth } from "../storage/auth";
 
 const Login = () => {
   const [user, setUser] = useState({
@@ -17,6 +18,7 @@ const Login = () => {
     });
   };
   const navigate = useNavigate()
+  const {storeTokeninLS} = useAuth()
   const handleSubmit = async(e) => {
     e.preventDefault();
     console.log(user);
@@ -29,6 +31,8 @@ const Login = () => {
         body: JSON.stringify(user),
       });
       if(response.ok){
+        const data = await response.json()
+        storeTokeninLS(data.token)
         alert("login successfull")
         navigate('/')
       }

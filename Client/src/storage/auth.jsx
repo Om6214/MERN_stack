@@ -3,11 +3,11 @@ import { createContext, useContext } from "react";
 const AuthContext = createContext();
 
 export const AuthProvider =({children})=>{
-    const storetkeninLS=()=>{
+    const storeTokeninLS=(servertoken)=>{
         return localStorage.setItem('Token',servertoken)
     }
     return(
-        <AuthContext.Provider value={{storetkeninLS}} >
+        <AuthContext.Provider value={{storeTokeninLS}} >
             {children}
         </AuthContext.Provider>
 
@@ -15,5 +15,5 @@ export const AuthProvider =({children})=>{
 }
 
 export const useAuth=()=>{
-    return useContext(useAuth)
+    return useContext(AuthContext)
 }

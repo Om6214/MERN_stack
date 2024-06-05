@@ -23,7 +23,7 @@ const Register = () => {
   };
 
   // through useContext api we are getting the token data
-  const storetkeninLS = useAuth();
+  const { storeTokeninLS } = useAuth();
 
   const handleSubmit = async (e) => {
     e.preventDefault();
@@ -39,7 +39,7 @@ const Register = () => {
 
       if (response.ok) {
         const data = await response.json()
-        storetkeninLS(data.token)
+        storeTokeninLS(data.token)
         setUser({ Name: "", Email: "", Phone_number: "",  Password: "" });
         navigate("/login");
       }
