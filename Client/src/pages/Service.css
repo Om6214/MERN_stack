@@ -1,0 +1,15 @@
+.service{
+    width: 80%;
+    height: auto;
+}
+#cont{
+    display: flex;
+    justify-content: center;
+}
+
+h1{
+    background: -webkit-linear-gradient(rgb(209, 0, 0),rgb(79, 255, 199),rgb(22, 0, 133),rgb(0, 255, 26));
+    background-clip: text;
+    -webkit-text-fill-color: transparent;
+    font-size: 50px;
+}

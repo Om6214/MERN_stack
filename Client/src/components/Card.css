@@ -4,7 +4,6 @@
     grid-template-columns: repeat(2, 1fr);
     gap: 20px;
     padding: 20px;
-    height: 66vh;
   }
   
   #card {
@@ -20,16 +19,18 @@
   #prod {
     width: 100%;
     max-width: 250px;
+    height: 270px;
+    border-radius: 13px;
   }
   
   #card h3 {
     margin: 10px 0;
     font-size: 1.8em;
-    color: #333;
+    color: #ffffff;
   }
   
   #card p {
-    font-size: 1.2em;
+    font-size: 1em;
     color: #666;
   }
   
@@ -45,16 +46,18 @@
   }
   
   .buy-btn {
-    background-color: #007bff;
+    background-color: transparent;
+    border: 2px solid rgb(90, 187, 90);
+    box-shadow: 3px 4px 6px rgb(90, 187, 90);
     color: white;
-  }
+  } 
   
   .buy-btn:hover {
-    background-color: #0056b3;
+    background-color: rgb(90, 187, 90);
   }
   
   .add-to-cart-btn {
-    background-color: #28a745;
+    background-color: transparent;
     color: white;
   }
   
@@ -75,15 +78,15 @@
     }
   
     #prod {
-      max-width: 100%;
+      max-width: 66%;
     }
   
     #card h3 {
-      font-size: 1.5em;
+      font-size: 1.3em;
     }
   
     #card p {
-      font-size: 1em;
+      font-size: 14px;
     }
   
     .buy-btn,

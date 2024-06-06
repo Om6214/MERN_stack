@@ -9,7 +9,6 @@ const Home = () => {
     <>
       <Corousal/>
       <Suggest/>
-      <Card/>
       <Footer/>
     </>
   )

@@ -12,7 +12,7 @@ router
     .post(validate.signupvalidate(schema.signupschema),authrouter.register)
 router
     .route("/login")
-    .post(validate.loginValidate(schema.loginschema),authrouter.login)
+    .post(validate.signupvalidate(schema.loginschema),authrouter.login)
 
 router
     .route('/contact')

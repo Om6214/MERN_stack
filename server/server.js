@@ -5,6 +5,7 @@ const error_middleware = require('./middleware/error-middleware')
 const PORT = 3000 || process.env.PORT;
 const connectDB = require('./utils/db')
 const cors = require("cors")
+const serviceRouter = require('./router/service-router')
 
 const router = require('./router/auth-router')
 
@@ -23,8 +24,10 @@ app.use(cors(corsOptions));
 // this is the middleware used to deal with the json files 
 app.use(express.json())
 
-// this is middleware where the the router will go at /auth/register at get the varous routes 
+// this is middleware where the the router will go at / at get the varous routes 
 app.use('/',router);
+
+app.use('/',serviceRouter)
 
 // this is the error handle middleware and it should be put only at the last of the Middlewares
 app.use(error_middleware)

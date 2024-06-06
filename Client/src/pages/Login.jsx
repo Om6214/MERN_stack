@@ -35,6 +35,11 @@ const Login = () => {
         alert("login successfull")
         navigate('/')
       }
+      else{
+        const data = await response.json()
+        alert(data.message)
+      }
+
     } catch (error) {
       console.log(error);
     }

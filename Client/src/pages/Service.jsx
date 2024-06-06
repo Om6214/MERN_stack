@@ -1,9 +1,38 @@
-import React from 'react'
+import { useAuth } from "../storage/auth";
+import "./Service.css";
+import "../components/Card.css";
 
 const Service = () => {
-  return (
-    <h1>this is service page</h1>
-  )
-}
+  const { data } = useAuth();
 
-export default Service
+  return (
+    <div>
+      <div id="cont">
+        <div className="service">
+          <h1>Our products</h1>
+          <div style={{height:"auto"}} className="container-fluid">
+            {data.length > 0 ? (
+              data.map((currEle, index) => {
+                const { prodName, prodPrice, Description, prodImg } = currEle;
+                return (
+                  <div id="card">
+                    <img id="prod" src={prodImg} alt="" />
+                    <h3>{prodName}</h3>
+                    <p>{Description}</p>
+                    <h4>&#x20b9; {prodPrice}</h4>
+                    <button className="buy-btn">Buy Now</button>
+                    <button className="add-to-cart-btn">Add to Cart</button>
+                  </div>
+                );
+              })
+            ) : (
+              <p>loading data</p>
+            )}
+          </div>
+        </div>
+      </div>
+    </div>
+  );
+};
+
+export default Service;

@@ -35,12 +35,17 @@ const Register = () => {
         },
         body: JSON.stringify(user),
       });
+      const data = await response.json()
+      console.log("res from server",data.message)
 
       if (response.ok) {
         const data = await response.json()
         storeTokeninLS(data.token)
         setUser({ Name: "", Email: "", Phone_number: "",  Password: "" });
         navigate("/login");
+      }
+      else{
+        alert(data.message)
       }
     } catch (error) {
       console.error("Fetch error:", error);
@@ -88,7 +93,7 @@ const Register = () => {
                 Phone Number
               </label>
               <input
-                type="text"
+                type="number"
                 className="form-control"
                 id="exampleInputPhone1"
                 name="Phone_number"

@@ -27,7 +27,23 @@ export const AuthProvider = ({ children }) => {
       }
   }
 
+  // to get the products at the frontend
+
+  const [data, setdata] = useState([])
+
+  const getServices= async()=>{
+    const response = await fetch("http://localhost:3000/service/products",{
+      method:"GET"
+    })
+    if(response.ok){
+      const data = await response.json()
+      console.log(data.msg)
+      setdata(data.msg)
+    }
+  }
+
   useEffect(()=>{
+    getServices()
     userAuthentication()
   },[])
 
@@ -39,7 +55,7 @@ export const AuthProvider = ({ children }) => {
   };
 
   return (
-    <AuthContext.Provider value={{ storeTokeninLS,isLoggedIN,LogOutUser,detail }}>
+    <AuthContext.Provider value={{ storeTokeninLS,isLoggedIN,LogOutUser,detail ,data}}>
       {children}
     </AuthContext.Provider>
   );
