@@ -8,6 +8,7 @@ const cors = require("cors")
 const serviceRouter = require('./router/service-router')
 
 const router = require('./router/auth-router')
+const admin_router = require("./router/admin-router")
 
 
 // handling the cors error
@@ -23,6 +24,7 @@ app.use(cors(corsOptions));
 
 // this is the middleware used to deal with the json files 
 app.use(express.json())
+app.use('/admin',admin_router)
 
 // this is middleware where the the router will go at / at get the varous routes 
 app.use('/',router);

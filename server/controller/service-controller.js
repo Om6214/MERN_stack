@@ -1,4 +1,6 @@
 const AddProd = require("../model/add_prod")
+const Users = require("../model/user_model")
+const Contact = require("../model/contact_model")
 
 
 const add = async (req, res) => {
@@ -31,4 +33,28 @@ const product = async(req,res) =>{
     }
 }
 
-module.exports= { add,product }
+const getContacts = async(req,res,next) =>{
+    try {
+        const result = await Contact.find()
+        if(!result){
+            res.status(404).json({"message":"No Users"})
+        }
+        res.status(200).json({result})
+    } catch (error) {
+        next(error)
+    }
+}
+
+const getusers = async(req,res,next) =>{
+    try {
+        const result = await Users.find()
+        if(!result){
+            res.status(404).json({"message":"No Users"})
+        }
+        res.status(200).json({result})
+    } catch (error) {
+        next(error)
+    }
+}
+
+module.exports= { add,product,getusers , getContacts}
