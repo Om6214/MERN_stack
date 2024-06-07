@@ -20,7 +20,12 @@
     width: 100%;
     max-width: 250px;
     height: 270px;
+    transition: transform .2s;
     border-radius: 13px;
+  }
+  #prod:hover{
+    transform: scale(1.1);
+    overflow: hidden;
   }
   
   #card h3 {

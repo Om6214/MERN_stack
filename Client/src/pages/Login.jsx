@@ -4,6 +4,7 @@ import "../pages/login.css";
 import Footer from "../components/Footer";
 import { useNavigate } from "react-router-dom";
 import { useAuth } from "../storage/auth";
+import { toast } from 'react-toastify'
 
 const Login = () => {
   const [user, setUser] = useState({
@@ -32,12 +33,17 @@ const Login = () => {
       if(response.ok){
         const data = await response.json()
         storeTokeninLS(data.token)
-        alert("login successfull")
+        toast.success("Login successfull",{
+          theme:"dark"
+        })
         navigate('/')
       }
       else{
         const data = await response.json()
-        alert(data.message)
+        toast.error(data.message,{
+          theme:"dark",
+          position:"bottom-right"
+        })
       }
 
     } catch (error) {

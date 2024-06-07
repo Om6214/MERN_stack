@@ -9,13 +9,13 @@ const Service = () => {
     <div>
       <div id="cont">
         <div className="service">
-          <h1>Our products</h1>
+          <h1 id="header">Our products</h1>
           <div style={{height:"auto"}} className="container-fluid">
             {data.length > 0 ? (
               data.map((currEle, index) => {
                 const { prodName, prodPrice, Description, prodImg } = currEle;
                 return (
-                  <div id="card">
+                  <div id="card" key={index}>
                     <img id="prod" src={prodImg} alt="" />
                     <h3>{prodName}</h3>
                     <p>{Description}</p>

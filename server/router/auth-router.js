@@ -16,7 +16,7 @@ router
 
 router
     .route('/contact')
-    .post(validate.contactValidate(schema.contactSchema),authrouter.service)
+    .post(validate.signupvalidate(schema.contactSchema),authrouter.service)
 
 router.route('/user').get(authMiddleware,authrouter.user)
 

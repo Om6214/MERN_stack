@@ -21,13 +21,11 @@ const contactValidate = (schema)=>(req,res,next)=>{
         req.body=parseData
         next()
     } catch (err) {
-        const message = "Fell the input properly";
+        const message = err.error[0].message || "Invalid request data";
         const status = 422;
-        const extraDetail = err.error[0].message || "Invalid request data";
         const error = {
             status,
             message,
-            extraDetail
         }   
         console.log(error)
         next(error);

@@ -7,8 +7,8 @@
     justify-content: center;
 }
 
-h1{
-    background: -webkit-linear-gradient(rgb(209, 0, 0),rgb(79, 255, 199),rgb(22, 0, 133),rgb(0, 255, 26));
+#header{
+    background: -webkit-linear-gradient(rgb(209, 0, 0),rgb(79, 255, 199),rgb(103, 194, 108),rgb(0, 80, 8));
     background-clip: text;
     -webkit-text-fill-color: transparent;
     font-size: 50px;

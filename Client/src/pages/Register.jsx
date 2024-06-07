@@ -3,6 +3,7 @@ import regimg from "/file.png";
 import "../App.css";
 import Footer from "../components/Footer";
 import { useNavigate } from "react-router-dom";
+import { toast} from "react-toastify";
 import { useAuth } from "../storage/auth";
 
 const Register = () => {
@@ -36,16 +37,17 @@ const Register = () => {
         body: JSON.stringify(user),
       });
       const data = await response.json()
-      console.log("res from server",data.message)
 
       if (response.ok) {
-        const data = await response.json()
         storeTokeninLS(data.token)
         setUser({ Name: "", Email: "", Phone_number: "",  Password: "" });
-        navigate("/login");
+        navigate("/");
       }
       else{
-        alert(data.message)
+        toast.error(data.message,{
+          theme:"dark",
+          position:"bottom-right"
+        })
       }
     } catch (error) {
       console.error("Fetch error:", error);

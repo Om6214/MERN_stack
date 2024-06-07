@@ -2,6 +2,7 @@ import React, { useState } from "react";
 import "../pages/login.css";
 import Footer from "../components/Footer";
 import { useAuth } from "../storage/auth";
+import { toast } from "react-toastify";
 
 const Contact = () => {
   const [user, setUser] = useState({
@@ -38,13 +39,24 @@ const Contact = () => {
       },
       body: JSON.stringify(user),
     });
+
+
     if (response.ok) {
-      alert("Message sent");
+      toast.success("Message sent", {
+        theme: "dark",
+        position: "top-center",
+      });
       setUser({
         Name: detail.Name,
         Email: detail.Email,
         Message: "",
       });
+    }
+    else{
+      toast.error(data.message,{
+        theme:"dark",
+        position:"bottom-right"
+      })
     }
   };
   return (
