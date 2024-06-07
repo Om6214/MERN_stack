@@ -9,6 +9,10 @@ import Register from "./pages/Register"
 import { Navbar } from "./components/Navbar"
 import Error from "./components/Error"
 import Logout from "./pages/Logout"
+import Admin from "./pages/Admin"
+import User from "./components/User"
+import AdminCont from "./components/adminCont"
+import AdminService from "./components/adminService"
 
 const App = ()=>{
   return(
@@ -22,7 +26,11 @@ const App = ()=>{
         <Route path="/login" element={<Login/>}/>
         <Route path="/register" element={<Register/>}/>
         <Route path="/logout" element={<Logout/>}/>
+        <Route path="/admin" element={<Admin/>}/>
+        <Route path="/adminUser" element={<User/>}/>
+        <Route path="/adminCont" element={<AdminCont/>}/>
         <Route path="*" element={<Error/>}/>
+        <Route path="/adminService" element={<AdminService/>}/>
       </Routes>
     </BrowserRouter>
   )

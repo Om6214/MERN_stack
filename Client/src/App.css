@@ -42,6 +42,10 @@
   .form h1 {
     margin-bottom: 20px;
   }
+  .formdiv{
+    width: 60%;
+    margin-left: 252px;
+  }
   
   @media (max-width: 768px) {
     .img-fluid, .form {

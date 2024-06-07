@@ -1,0 +1,49 @@
+body {
+  font-family: Arial, sans-serif;
+  background-color: #ffffff;
+  margin: 0;
+  padding: 0;
+}
+
+.admin-panel {
+  width: 300px;
+  margin: 50px auto;
+  padding: 20px;
+  background-color: #000000;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+  border-radius: 5px;
+}
+
+.admin-panel h1 {
+  text-align: center;
+  margin-bottom: 20px;
+  font-size: 24px;
+  color: #ffffff;
+}
+
+.user-info {
+  display: flex;
+  flex-direction: column;
+}
+
+.info-item {
+  margin-bottom: 10px;
+  display: flex;
+  justify-content: space-between;
+}
+
+.label {
+  font-weight: bold;
+  color: #ffffff;
+}
+
+.value {
+  color: #ffffff;
+}
+
+.aldiv {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 20px;
+  padding: 20px;
+}

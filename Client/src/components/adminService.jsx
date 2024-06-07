@@ -1,0 +1,130 @@
+import React, { useState } from "react";
+import "../App.css";
+import { toast } from "react-toastify";
+
+const adminService = () => {
+  const [product, setproduct] = useState({
+    prodImg: "",
+    prodName: "",
+    prodPrice: "",
+    discountPrice: "",
+    Description: "",
+  });
+
+  const handleChange = (e) => {
+    const { name, value } = e.target;
+    setproduct({
+      ...product,
+      [name]: value,
+    });
+  };
+  const handleSubmit = async (e) => {
+    e.preventDefault();
+    try {
+      const response = await fetch("http://localhost:3000/admin/addprod", {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json",
+        },
+        body: JSON.stringify(product),
+      });
+      if (response.ok) {
+        toast.success("Product added", {
+          theme: "dark",
+        });
+        setproduct({
+          prodImg: "",
+          prodName: "",
+          prodPrice: "",
+          discountPrice: "",
+          Description: "",
+        });
+      } else
+        toast.error("Failed to add", {
+          theme: "dark",
+        });
+    } catch (error) {
+      console.log(error);
+    }
+  };
+  return (
+    <>
+      <div className="formdiv">
+        <h1 style={{ textAlign: "center", marginTop: "20px" }}>Add Products</h1>
+        <form onSubmit={handleSubmit}>
+          <div className="mb-3">
+            <label for="imglink" className="form-label">
+              ImageLink
+            </label>
+            <input
+              type="text"
+              className="form-control"
+              name="prodImg"
+              id="prodImg"
+              aria-describedby="emailHelp"
+              value={product.prodImage}
+              onChange={handleChange}
+            />
+          </div>
+          <div className="mb-3">
+            <label for="ProdName" className="form-label">
+              Product Name
+            </label>
+            <input
+              type="text"
+              className="form-control"
+              id="prodName"
+              name="prodName"
+              value={product.ProdName}
+              onChange={handleChange}
+            />
+          </div>
+          <div className="mb-3">
+            <label for="prodprice" className="form-label">
+              Product Price
+            </label>
+            <input
+              type="number"
+              className="form-control"
+              id="prodPrice"
+              name="prodPrice"
+              value={product.prodPrice}
+              onChange={handleChange}
+            />
+          </div>
+          <div className="mb-3">
+            <label for="discountPrice" className="form-label">
+              Product Discount Price
+            </label>
+            <input
+              type="number"
+              className="form-control"
+              id="discountPrice"
+              name="discountPrice"
+              value={product.discountPrice}
+              onChange={handleChange}
+            />
+          </div>
+          <div className="mb-3">
+            <label for="Description" className="form-label">
+              Product Description
+            </label>
+            <input
+              type="text"
+              className="form-control"
+              id="Description"
+              name="Description"
+              value={product.Description}
+              onChange={handleChange}
+            />
+          </div>
+          <button type="submit" className="btn btn-primary">
+            Submit
+          </button>
+        </form>
+      </div>
+    </>
+  );
+};
+
+export default adminService;

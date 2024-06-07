@@ -38,7 +38,6 @@ export const AuthProvider = ({ children }) => {
     })
     if(response.ok){
       const data = await response.json()
-      console.log(data.msg)
       setdata(data.msg)
     }
   }
