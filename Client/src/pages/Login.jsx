@@ -34,7 +34,8 @@ const Login = () => {
         const data = await response.json()
         storeTokeninLS(data.token)
         toast.success("Login successfull",{
-          theme:"dark"
+          theme:"dark",
+          autoClose:2000
         })
         navigate('/')
       }
@@ -42,7 +43,8 @@ const Login = () => {
         const data = await response.json()
         toast.error(data.message,{
           theme:"dark",
-          position:"bottom-right"
+          position:"bottom-right",
+          autoClose:2000
         })
       }
 

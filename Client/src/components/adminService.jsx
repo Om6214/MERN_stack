@@ -3,6 +3,7 @@ import "../App.css";
 import { toast } from "react-toastify";
 
 const adminService = () => {
+  const token = localStorage.getItem("Token")
   const [product, setproduct] = useState({
     prodImg: "",
     prodName: "",
@@ -25,6 +26,8 @@ const adminService = () => {
         method: "POST",
         headers: {
           "Content-Type": "application/json",
+          "Authorization":`Bearer ${token}`
+
         },
         body: JSON.stringify(product),
       });
@@ -40,7 +43,7 @@ const adminService = () => {
           Description: "",
         });
       } else
-        toast.error("Failed to add", {
+        toast.error("Authorization Revoked", {
           theme: "dark",
         });
     } catch (error) {

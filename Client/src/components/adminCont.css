@@ -1,0 +1,54 @@
+.aldiv {
+    display: flex;
+    width: 60%;
+    margin-left: 280px;
+  }
+  
+  .tab {
+    width: 100%;
+    border-collapse: collapse;
+    margin: 20px 0;
+    font-size: 18px;
+    text-align: left;
+  }
+  
+  .tab th, .tab td {
+    padding: 12px 15px;
+    border: 1px solid #2f2626;
+  }
+  
+  .tab th {
+    background-color: #2a2020;
+    font-weight: bold;
+  }
+  
+  .tab tr:nth-child() {
+    background-color: #2a2222;
+  }
+  
+  .tab tr:hover {
+    background-color: #1e1616;
+  }
+  
+  .tab td {
+    vertical-align: middle;
+  }
+  
+  #del, #upd {
+    cursor: pointer;
+    margin: 0 5px;
+  }
+  
+  #del i, #upd i {
+    color: #007BFF;
+    font-size: 18px;
+  }
+  
+  #del i:hover {
+    color: #dc3545;
+  }
+  
+  #upd i:hover {
+    color: #28a745;
+  }
+  

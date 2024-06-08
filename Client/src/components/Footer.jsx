@@ -9,12 +9,12 @@ const Footer = () => {
         <div id="left">
           <div className="collect">
             <img src="/gg.jpg" alt="GadgetGrooves Logo" />
-            <h1>GadgetGrooves</h1>
+            <h1>GadgetGroove</h1>
           </div>
           <p>
           Discover the latest in electronics at unbeatable prices. From cutting-edge gadgets to everyday essentials, we bring you top brands and innovative technology.
           </p>
-          <p>© 2024 GadgetGrooves. All rights reserved. Privacy Policy | Terms of Service</p>
+          <p>© 2024 GadgetGroove. All rights reserved. Privacy Policy | Terms of Service</p>
         </div>
         <div id="right">
           <div className="my-account">

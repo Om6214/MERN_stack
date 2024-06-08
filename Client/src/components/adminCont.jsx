@@ -1,56 +1,89 @@
 import React, { useState, useEffect } from "react";
-import "./User.css"
+import "./adminCont.css"
+import { toast } from "react-toastify";
 
-const adminCont = () => {
-  const [card, setcard] = useState([]);
+const AdminCont = () => {
+  const [card, setCard] = useState([]);
+  const token = localStorage.getItem("Token");
+
   const fetchCont = async () => {
     try {
       const response = await fetch("http://localhost:3000/admin/getcontacts", {
         method: "GET",
+        headers: {
+          Authorization: `Bearer ${token}`,
+        },
       });
       if (response.ok) {
         const data = await response.json();
-        setcard(data.result);
+        setCard(data.result);
+      } else {
+        console.error("Failed to fetch contacts");
       }
     } catch (error) {
-      console.log("error is", error);
+      console.error("Error fetching contacts:", error);
     }
   };
+  const deleteMsg = async(id) =>{
+    try {
+      const response = await fetch(`http://localhost:3000/admin/getcontacts/delete/${id}`,{
+        method:"DELETE",
+        headers:{
+          "Authorization":`Bearer ${token}`
+        }
+      })
+      console.log(response)
+      if(response.ok){
+        toast.success("Message deleted",{
+          theme:"dark",
+          autoclose:2000,
+          position:"top-center"
+        })
+        fetchCont();
+      }
+    } catch (error) {
+      console.log("message unabel to delete")
+    }
+  }
 
   useEffect(() => {
     fetchCont();
   }, []);
+
   return (
     <>
-    <h1 style={{textAlign:"center",marginTop:"20px"}}>All contact</h1>
-    <div className="aldiv">
-      {card.map((curEle, index) => {
-        const { Name, Email, Message } = curEle;
-        return (
-          <div className="admin-panel" key={index}>
-            <div className="user-info">
-              <div className="info-item">
-                <span className="label">Name:</span>
-                <span className="value">{Name}</span>
-              </div>
-              <div className="info-item">
-                <span className="label">Email:</span>
-                <span className="value">{Email}</span>
-              </div>
-              <div className="info-item">
-                <h6 className="label">Message</h6>
-                <p className="value">{Message}</p>
-              </div>
-              <div className="button">
-                <button style={{ color: "black" }}>Remove</button>
-              </div>
-            </div>
-          </div>
-        );
-      })}
-    </div>
+      <h1 style={{textAlign:"center"}} className="header">All contact</h1>
+      <div className="aldiv">
+        <table className="tab">
+          <thead>
+            <tr>
+              <th>Name</th>
+              <th>Email</th>
+              <th>Message</th>
+              <th>Action</th>
+            </tr>
+          </thead>
+          <tbody>
+            {card.map((curEle, index) => {
+              const { Name, Email, Message } = curEle;
+              return (
+                <tr key={index}>
+                  <td>{Name}</td>
+                  <td>{Email}</td>
+                  <td>{Message}</td>
+                  <td>
+                    <span onClick={()=>deleteMsg(curEle._id)} id="del">
+                      <i className="fa-solid fa-trash"></i>
+                    </span>
+                  </td>
+                </tr>
+              );
+            })}
+          </tbody>
+        </table>
+      </div>
     </>
   );
 };
 
-export default adminCont;
+export default AdminCont;
