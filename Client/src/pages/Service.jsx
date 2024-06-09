@@ -13,13 +13,13 @@ const Service = () => {
           <div style={{height:"auto"}} className="container-fluid">
             {data.length > 0 ? (
               data.map((currEle, index) => {
-                const { prodName, prodPrice, Description, prodImg } = currEle;
+                const { prodName, prodPrice, Description, prodImg , discountPrice } = currEle;
                 return (
                   <div id="card" key={index}>
                     <img id="prod" src={prodImg} alt="" />
                     <h3>{prodName}</h3>
                     <p>{Description}</p>
-                    <h4>&#x20b9; {prodPrice}</h4>
+                    <h4><del>&#x20b9; {prodPrice}</del><ins style={{marginLeft:"10px"}}>&#x20b9; {discountPrice}</ins></h4>
                     <button className="buy-btn">Buy Now</button>
                     <button className="add-to-cart-btn">Add to Cart</button>
                   </div>
