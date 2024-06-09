@@ -39,6 +39,10 @@ const Register = () => {
       const data = await response.json()
 
       if (response.ok) {
+        toast.success("registration successfull",{
+          theme:"dark",
+          autoClose:2000
+        })
         storeTokeninLS(data.token)
         setUser({ Name: "", Email: "", Phone_number: "",  Password: "" });
         navigate("/");

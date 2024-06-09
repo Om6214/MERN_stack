@@ -1,6 +1,7 @@
 const AddProd = require("../model/add_prod");
 const User = require("../model/user_model");
 const Contact = require("../model/contact_model");
+const bcrypt = require("bcrypt")
 
 const add = async (req, res) => {
   try {
@@ -88,5 +89,32 @@ const getusers = async (req, res, next) => {
     next(error);
   }
 };
+const updateUser = async (req, res, next) => {
+  try {
+    const id = req.params.id; // Ensure your route is set up to send the id as a parameter
+    const data = req.body
 
-module.exports = { add, product, getusers, getContacts, deleteUser, deleteMsg };
+    if(data.Password){
+      const saltRounds = 10;
+      const hashedPassword = await bcrypt.hash(data.Password,saltRounds)
+    }
+    const updatedUser = await User.updateOne(
+      { _id: id },
+      { $set: data },
+    );
+
+    if (updatedUser.nModified === 0) {
+      // If no document was modified, send a not found response
+      return res.status(404).json({ message: "User not found or no changes made" });
+    }
+
+    return res.status(200).json({ message: "User updated successfully", updatedUser });
+  } catch (error) {
+    next(error);
+  }
+};
+
+module.exports = updateUser;
+
+
+module.exports = { add, product, getusers, getContacts, deleteUser, deleteMsg,updateUser};

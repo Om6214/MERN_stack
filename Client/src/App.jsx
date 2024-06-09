@@ -14,6 +14,7 @@ import User from "./components/User";
 import AdminCont from "./components/adminCont";
 import AdminService from "./components/adminService";
 import { useAuth } from "./storage/auth";
+import UpdateUser from "./components/UpdateUser";
 
 const App = () => {
   const { isAdmin } = useAuth();
@@ -35,6 +36,7 @@ const App = () => {
             <Route path="/adminUser" element={<User />} />
             <Route path="/adminCont" element={<AdminCont />} />
             <Route path="/adminService" element={<AdminService />} />
+            <Route path="/admin/users/edit" element={<UpdateUser />} />
           </>
         ) : (
           <>
