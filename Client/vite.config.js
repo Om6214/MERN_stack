@@ -4,11 +4,11 @@ import react from '@vitejs/plugin-react';
 export default defineConfig({
   plugins: [react()],
   optimizeDeps: {
-    include: ['react-toastify']
+    include: ['react-bootstrap']
   },
   build: {
     rollupOptions: {
-      external: ['react-toastify']
+      external: ['react-bootstrap']
     }
   }
 });
