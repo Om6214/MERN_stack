@@ -67,6 +67,16 @@ function AutoLayoutExample() {
           </div>
           <div className="card">
             <img
+              style={{borderRadius:"30px"}}
+              onClick={() => {
+                setcategory("Watches");
+              }}
+              src="/watches.jpeg"
+              alt=""
+            />
+          </div>
+          <div className="card">
+            <img
               onClick={() => {
                 setcategory("Camera");
               }}
