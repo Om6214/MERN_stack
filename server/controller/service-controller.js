@@ -1,29 +1,30 @@
-const AddProd = require("../model/add_prod");
+const Device = require("../model/add_prod");
 const User = require("../model/user_model");
 const Contact = require("../model/contact_model");
 const bcrypt = require("bcrypt")
 
 const add = async (req, res) => {
   try {
-    const { prodImg, prodName, prodPrice, discountPrice, Description } =
+    const { prodImg, prodName,prodCategory,prodStocks, prodPrice, discountPrice, Description } =
       req.body;
 
-    // Ensure required fields are provided
-    if (!prodImg || !prodName || !prodPrice || !Description) {
+    if (!prodImg || !prodName || !prodCategory || !prodStocks || !prodPrice || !Description) {
       return res
         .status(400)
         .json({ msg: "All required fields must be provided" });
     }
 
-    const product = new AddProd({
+    const product = new Device({
       prodImg,
       prodName,
+      prodCategory,
+      prodStocks,
       prodPrice,
       discountPrice,
       Description,
     });
     await product.save();
-    res.status(200).json({ msg: "Product added successfully" });
+    res.status(200).json({ msg: product });
   } catch (error) {
     console.log("error:", error);
     res
@@ -34,7 +35,7 @@ const add = async (req, res) => {
 
 const product = async (req, res) => {
   try {
-    const response = await AddProd.find();
+    const response = await Device.find();
     if (!response) {
       res.status(400).json({ msg: "Failed to fetch the products" });
     }

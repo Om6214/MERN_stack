@@ -11,7 +11,7 @@ const UpdateUser = () => {
     Name: "",
     Email: "",
     Phone_number: "",
-    isAdmin: false
+    isAdmin: false,
   });
 
   useEffect(() => {
@@ -22,24 +22,27 @@ const UpdateUser = () => {
     const { name, value, type, checked } = e.target;
     setData({
       ...data,
-      [name]: type === 'checkbox' ? checked : value
+      [name]: type === "checkbox" ? checked : value,
     });
   };
 
   const handleSubmit = async (e) => {
     e.preventDefault();
     try {
-      const response = await fetch(`http://localhost:3000/admin/update/${_id}`, {
-        method: "PUT",
-        headers: {
-          "Content-Type": "application/json",
-        },
-        body: JSON.stringify(data)
-      });
+      const response = await fetch(
+        `http://localhost:3000/admin/update/${_id}`,
+        {
+          method: "PUT",
+          headers: {
+            "Content-Type": "application/json",
+          },
+          body: JSON.stringify(data),
+        }
+      );
 
       if (response.ok) {
         console.log("Update done");
-        navigate('/adminUser');
+        navigate("/adminUser");
       } else {
         console.log("Failed to update user");
       }
@@ -74,14 +77,16 @@ const UpdateUser = () => {
         value={data.Phone_number}
         onChange={handleChange}
       />
-      <label htmlFor="isAdmin">Admin</label>
-      <input
-        type="checkbox"
-        name="isAdmin"
-        id="isAdmin"
-        checked={data.isAdmin}
-        onChange={handleChange}
-      />
+      <div id="admin">
+        <label htmlFor="isAdmin">Admin</label>
+        <input
+          type="checkbox"
+          name="isAdmin"
+          id="isAdmin"
+          checked={data.isAdmin}
+          onChange={handleChange}
+        />
+      </div>
       <button type="submit">Update User</button>
     </form>
   );

@@ -2,11 +2,19 @@ const mongoose = require("mongoose")
 
 const productSchema = new mongoose.Schema({
     prodImg:{
-        type:String,
+        type:Array,
         require:true
     },
     prodName:{
         type:String,
+        require:true
+    },
+    prodCategory:{
+        type:String,
+        require:true
+    },
+    prodStocks:{
+        type:Number,
         require:true
     },
     prodPrice:{
@@ -22,5 +30,5 @@ const productSchema = new mongoose.Schema({
     }
 })
 
-const AddProd = new mongoose.model("AddProd",productSchema);
-module.exports=AddProd;
+const Device = new mongoose.model("Device",productSchema);
+module.exports=Device;

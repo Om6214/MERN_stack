@@ -7,8 +7,10 @@ const adminService = () => {
   const [product, setproduct] = useState({
     prodImg: "",
     prodName: "",
+    prodCategory:"",
     prodPrice: "",
     discountPrice: "",
+    prodStocks:"",
     Description: "",
   });
 
@@ -36,8 +38,9 @@ const adminService = () => {
           theme: "dark",
         });
         setproduct({
-          prodImg: "",
+          prodImg: [],
           prodName: "",
+          prodCategory:"",
           prodPrice: "",
           discountPrice: "",
           Description: "",
@@ -56,21 +59,21 @@ const adminService = () => {
         <h1 style={{ textAlign: "center", marginTop: "20px" }}>Add Products</h1>
         <form onSubmit={handleSubmit}>
           <div className="mb-3">
-            <label for="imglink" className="form-label">
+            <label htmlFor="imglink" className="form-label">
               ImageLink
             </label>
             <input
-              type="text"
+              type="String"
               className="form-control"
               name="prodImg"
               id="prodImg"
               aria-describedby="emailHelp"
-              value={product.prodImage}
+              value={product.prodImg}
               onChange={handleChange}
             />
           </div>
           <div className="mb-3">
-            <label for="ProdName" className="form-label">
+            <label htmlFor="ProdName" className="form-label">
               Product Name
             </label>
             <input
@@ -78,12 +81,25 @@ const adminService = () => {
               className="form-control"
               id="prodName"
               name="prodName"
-              value={product.ProdName}
+              value={product.prodName}
               onChange={handleChange}
             />
           </div>
           <div className="mb-3">
-            <label for="prodprice" className="form-label">
+            <label htmlFor="prodCategory" className="form-label">
+              prodCategory
+            </label>
+            <input
+              type="text"
+              className="form-control"
+              id="prodCategory"
+              name="prodCategory"
+              value={product.prodCategory}
+              onChange={handleChange}
+            />
+          </div>
+          <div className="mb-3">
+            <label htmlFor="prodprice" className="form-label">
               Product Price
             </label>
             <input
@@ -96,7 +112,7 @@ const adminService = () => {
             />
           </div>
           <div className="mb-3">
-            <label for="discountPrice" className="form-label">
+            <label htmlFor="discountPrice" className="form-label">
               Product Discount Price
             </label>
             <input
@@ -109,7 +125,20 @@ const adminService = () => {
             />
           </div>
           <div className="mb-3">
-            <label for="Description" className="form-label">
+            <label htmlFor="prodStocks" className="form-label">
+              product stocks
+            </label>
+            <input
+              type="number"
+              className="form-control"
+              id="prodStocks"
+              name="prodStocks"
+              value={product.prodStocks}
+              onChange={handleChange}
+            />
+          </div>
+          <div className="mb-3">
+            <label htmlFor="Description" className="form-label">
               Product Description
             </label>
             <input

@@ -13,13 +13,16 @@ function ControlledCarousel() {
   return (
     <Carousel activeIndex={index} onSelect={handleSelect}>
       <Carousel.Item>
-        <img className='d-block w-100 img-fluid' style={{height:"450px",width:"1298px"}} src="/file.png" alt="first" />
+        <img className='d-block w-100 img-fluid' style={{height:"450px",width:"1298px"}} src="/coro1.jpeg" alt="first" />
       </Carousel.Item>
       <Carousel.Item>
-      <img className='d-block w-100 img-fluid' style={{height:"450px",width:"1298px"}} src="/file(1).png" alt="sec" />
+      <img className='d-block w-100 img-fluid' style={{height:"450px",width:"1298px"}} src="/head.jpeg" alt="third" />
       </Carousel.Item>
       <Carousel.Item>
-      <img className='d-block w-100 img-fluid' style={{height:"450px",width:"1298px"}} src="/gg.jpg" alt="third" />
+      <img className='d-block w-100 img-fluid' style={{height:"450px",width:"1298px"}} src="/ear.jpg" alt="third" />
+      </Carousel.Item>
+      <Carousel.Item>
+      <a href='/service'><img className='d-block w-100 img-fluid' style={{height:"450px",width:"1298px"}} src="/elec.png" alt="sec" /></a>
       </Carousel.Item>
     </Carousel>
   );

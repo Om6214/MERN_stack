@@ -18,7 +18,7 @@
 input[type="text"],
 input[type="email"],
 input[type="number"],
-input[type="checkbox"] {
+input[type="checkbox"]{
   width: calc(100% - 20px);
   padding: 10px;
   margin-bottom: 15px;
@@ -40,3 +40,12 @@ input[type="checkbox"] {
   font-size: 16px;
 }
 
+#admin{
+  display: flex;
+  flex-direction: row;
+}
+#isAdmin{
+  display: inline;
+  position: absolute;
+  right: 111px;
+}

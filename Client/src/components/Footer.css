@@ -126,3 +126,11 @@ footer {
     }
   }
   
+  .logos{
+    display: flex;
+    justify-content: space-evenly;
+  }
+  .logos i{
+    width: 20px;
+    height: 20px;
+  }

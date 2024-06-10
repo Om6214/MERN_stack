@@ -1,25 +1,27 @@
 import Container from 'react-bootstrap/Container';
 import Row from 'react-bootstrap/Row';
 import "../App.css"
+import Card from './Card';
 
 function AutoLayoutExample() {
   return (
     <Container id='info' className="d-flex justify-content-center" style={{width:"95%",marginTop:"50px"}}>
+      <h1>Shop By Category</h1>
       <Row style={{width:"95%"}}>
         <div  className="card">
-            <h1>1st card</h1>
+            <img src="/laptop.png" alt="" />
         </div>
         <div  className="card">
-            <h1>2nd card</h1>
+            <img src="/headphones.png" alt="" />
         </div>
         <div  className="card">
-            <h1>3rd card</h1>
+            <img src="/Accessories.png" alt="" />
         </div>
         <div  className="card">
-            <h1>3rd card</h1>
+            <img src="/Cameras.png" alt="cam" />
         </div>
         <div  className="card">
-            <h1>3rd card</h1>
+            <img style={{borderRadius:"40px"}} src="https://m.media-amazon.com/images/I/418zidwxGkL._AC_SR320,320_.jpg" alt="" />
         </div>
         
       </Row>
