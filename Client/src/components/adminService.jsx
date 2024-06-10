@@ -42,6 +42,7 @@ const adminService = () => {
           prodName: "",
           prodCategory:"",
           prodPrice: "",
+          prodStocks:"",
           discountPrice: "",
           Description: "",
         });

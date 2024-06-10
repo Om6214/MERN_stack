@@ -1,6 +1,6 @@
 /* login.css */
 .container-fluid {
-    height: 100vh; /* Ensure full viewport height */
+    height: auto; /* Ensure full viewport height */
   }
   
   .img-fluid {
