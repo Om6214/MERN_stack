@@ -29,7 +29,7 @@ const Register = () => {
   const handleSubmit = async (e) => {
     e.preventDefault();
     try {
-      const response = await fetch("http://localhost:3000/register", {
+      const response = await fetch("https://mern-stack-1-hjpa.onrender.com/register", {
         method: "POST",
         headers: {
           "Content-Type": "application/json",

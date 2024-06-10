@@ -10,7 +10,7 @@ function AutoLayoutExample() {
   const fetchprodByCat = async () => {
     try {
       const response = await fetch(
-        `http://localhost:3000/products/${category}`,
+        `https://mern-stack-1-hjpa.onrender.com/products/${category}`,
         {
           method: "GET",
         }

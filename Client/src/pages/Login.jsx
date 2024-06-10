@@ -23,7 +23,7 @@ const Login = () => {
   const handleSubmit = async(e) => {
     e.preventDefault();
     try {
-      const response = await fetch("http://localhost:3000/login", {
+      const response = await fetch("https://mern-stack-1-hjpa.onrender.com/login", {
         method: "POST",
         headers: {
           "Content-type": "application/json",
