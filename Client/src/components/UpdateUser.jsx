@@ -30,7 +30,7 @@ const UpdateUser = () => {
     e.preventDefault();
     try {
       const response = await fetch(
-        `http://localhost:3000/admin/update/${_id}`,
+        `https://mern-stack-4ckn.onrender.com/admin/update/${_id}`,
         {
           method: "PUT",
           headers: {

@@ -24,7 +24,7 @@ const adminService = () => {
   const handleSubmit = async (e) => {
     e.preventDefault();
     try {
-      const response = await fetch("http://localhost:3000/admin/addprod", {
+      const response = await fetch("https://mern-stack-4ckn.onrender.com/admin/addprod", {
         method: "POST",
         headers: {
           "Content-Type": "application/json",

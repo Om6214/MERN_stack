@@ -5,8 +5,10 @@ import Footer from "../components/Footer";
 import { useNavigate } from "react-router-dom";
 import { toast} from "react-toastify";
 import { useAuth } from "../storage/auth";
+import LoadingBar from "react-top-loading-bar";
 
 const Register = () => {
+  const [progress, setprogress] = useState(0)
   const [user, setUser] = useState({
     Name: "",
     Email: "",
@@ -28,8 +30,9 @@ const Register = () => {
 
   const handleSubmit = async (e) => {
     e.preventDefault();
+    setprogress(progress+50)
     try {
-      const response = await fetch("http://localhost:3000/register", {
+      const response = await fetch("https://mern-stack-4ckn.onrender.com/register", {
         method: "POST",
         headers: {
           "Content-Type": "application/json",
@@ -43,6 +46,7 @@ const Register = () => {
           theme:"dark",
           autoClose:2000
         })
+        setprogress(progress+20)
         storeTokeninLS(data.token)
         setUser({ Name: "", Email: "", Phone_number: "",  Password: "" });
         navigate("/");
@@ -60,6 +64,11 @@ const Register = () => {
 
   return (
     <>
+    <LoadingBar
+        color='#f11946'
+        progress={progress}
+        onLoaderFinished={() => setProgress(0)}
+      />
       <div id="reg" className="container">
         <div className="img-fluid">
           <img src={regimg} alt="Registration" />

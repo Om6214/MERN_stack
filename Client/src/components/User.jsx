@@ -9,7 +9,7 @@ const User = () => {
 
   const fetchUser = async () => {
     try {
-      const response = await fetch("http://localhost:3000/admin/getusers", {
+      const response = await fetch("https://mern-stack-4ckn.onrender.com/admin/getusers", {
         method: "GET",
         headers: {
           Authorization: `Bearer ${token}`,
@@ -41,7 +41,7 @@ const handleNav = (Name,Email,Phone_number,isAdmin,_id)=>{
   const deleteUser = async (id) => {
     try {
       const response = await fetch(
-        `http://localhost:3000/admin/getusers/delete/${id}`,
+        `https://mern-stack-4ckn.onrender.com/admin/getusers/delete/${id}`,
         {
           method: "DELETE",
           headers: {
