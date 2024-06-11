@@ -10,13 +10,5 @@ export default defineConfig({
     rollupOptions: {
       external: ['react-bootstrap']
     }
-  },
-  "routes":{
-    "src":"/(.*)",
-    "dest":"src main.jsx",
-    "method":["GET","POST","PUT","PATCH","DELETE","OPTIONS"],
-    "headers":{
-      "Access-Control-Allow-Origin":"*"
-    }
   }
 });
