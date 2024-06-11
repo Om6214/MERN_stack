@@ -14,7 +14,7 @@ const admin_router = require("./router/admin-router")
 // handling the cors error
 
 const corsOptions = {
-    origin:'https://mern-stack-4ckn.onrender.com',
+    origin:'https://ommern-oivrxez0p-om6214s-projects.vercel.app/',
     methods:"GET, POST, PUT, DELETE, PATCH, HEAD",
     credentials:true
 }
