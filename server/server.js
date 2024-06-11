@@ -14,13 +14,12 @@ const admin_router = require("./router/admin-router")
 // handling the cors error
 
 const corsOptions = {
-    origin:'https://mern-stack-1-hjpa.onrender.com',
+    origin:'http://localhost:5173',
     methods:"GET, POST, PUT, DELETE, PATCH, HEAD",
     credentials:true
 }
 
-app.use(cors(corsOptions));
-
+app.use(cors(corsOptions)); 
 
 // this is the middleware used to deal with the json files 
 app.use(express.json())
