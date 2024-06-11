@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from "react";
 import { useNavigate, useLocation } from "react-router-dom";
 import "./updateUser.css";
+import { BaseUrl } from "../../baseURL";
 
 const UpdateUser = () => {
   const location = useLocation();
@@ -30,7 +31,7 @@ const UpdateUser = () => {
     e.preventDefault();
     try {
       const response = await fetch(
-        `http://localhost:3000/admin/update/${_id}`,
+        `${BaseUrl}/admin/update/${_id}`,
         {
           method: "PUT",
           headers: {

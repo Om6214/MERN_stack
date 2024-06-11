@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from "react";
 import "./adminCont.css"
 import { toast } from "react-toastify";
+import { BaseUrl } from "../../baseURL";
 
 const AdminCont = () => {
   const [card, setCard] = useState([]);
@@ -8,7 +9,7 @@ const AdminCont = () => {
 
   const fetchCont = async () => {
     try {
-      const response = await fetch("http://localhost:3000/admin/getcontacts", {
+      const response = await fetch(`${BaseUrl}/admin/getcontacts`, {
         method: "GET",
         headers: {
           Authorization: `Bearer ${token}`,
@@ -26,7 +27,7 @@ const AdminCont = () => {
   };
   const deleteMsg = async(id) =>{
     try {
-      const response = await fetch(`http://localhost:3000/admin/getcontacts/delete/${id}`,{
+      const response = await fetch(`${BaseUrl}/admin/getcontacts/delete/${id}`,{
         method:"DELETE",
         headers:{
           "Authorization":`Bearer ${token}`

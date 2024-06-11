@@ -6,6 +6,7 @@ import { useNavigate } from "react-router-dom";
 import { toast} from "react-toastify";
 import { useAuth } from "../storage/auth";
 import LoadingBar from "react-top-loading-bar";
+import { BaseUrl } from "../../baseURL";
 
 const Register = () => {
   const [progress, setprogress] = useState(0)
@@ -32,7 +33,7 @@ const Register = () => {
     e.preventDefault();
     setprogress(progress+50)
     try {
-      const response = await fetch("http://localhost:3000/register", {
+      const response = await fetch(`${BaseUrl}/register`, {
         method: "POST",
         headers: {
           "Content-Type": "application/json",
@@ -67,7 +68,7 @@ const Register = () => {
     <LoadingBar
         color='#f11946'
         progress={progress}
-        onLoaderFinished={() => setProgress(0)}
+        onLoaderFinished={() => setprogress(0)}
       />
       <div id="reg" className="container">
         <div className="img-fluid">

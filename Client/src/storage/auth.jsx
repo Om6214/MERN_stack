@@ -1,4 +1,5 @@
 import { createContext, useContext,useEffect,useState } from "react";
+import { BaseUrl } from "../../baseURL";
 
 const AuthContext = createContext();
 
@@ -14,7 +15,7 @@ export const AuthProvider = ({ children }) => {
 
   const userAuthentication=async()=>{
       try {
-        const response = await fetch("http://localhost:3000/user",{
+        const response = await fetch(`${BaseUrl}/user`,{
           method:"GET",
           headers:{
             "Authorization":`Bearer ${token}`
@@ -32,7 +33,7 @@ export const AuthProvider = ({ children }) => {
 
   const adminAuth = async()=>{
     try {
-      const response = await fetch("http://localhost:3000/admin/getusers",{
+      const response = await fetch(`${BaseUrl}/admin/getusers`,{
         method:"GET",
         headers:{
           "Authorization":`Bearer ${token}`
@@ -51,7 +52,7 @@ export const AuthProvider = ({ children }) => {
   const [data, setdata] = useState([])
 
   const getServices= async()=>{
-    const response = await fetch("http://localhost:3000/service/products",{
+    const response = await fetch(`${BaseUrl}/service/products`,{
       method:"GET"
     })
     if(response.ok){

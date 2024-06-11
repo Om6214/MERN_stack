@@ -1,6 +1,7 @@
 import React, { useState } from "react";
 import "../App.css";
 import { toast } from "react-toastify";
+import { BaseUrl } from "../../baseURL";
 
 const adminService = () => {
   const token = localStorage.getItem("Token")
@@ -24,7 +25,7 @@ const adminService = () => {
   const handleSubmit = async (e) => {
     e.preventDefault();
     try {
-      const response = await fetch("http://localhost:3000/admin/addprod", {
+      const response = await fetch(`${BaseUrl}/admin/addprod`, {
         method: "POST",
         headers: {
           "Content-Type": "application/json",

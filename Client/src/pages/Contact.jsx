@@ -3,6 +3,7 @@ import "../pages/login.css";
 import Footer from "../components/Footer";
 import { useAuth } from "../storage/auth";
 import { toast } from "react-toastify";
+import { BaseUrl } from "../../baseURL";
 
 const Contact = () => {
   const [user, setUser] = useState({
@@ -32,7 +33,7 @@ const Contact = () => {
 
   const handleSubmit = async (e) => {
     e.preventDefault();
-    const response = await fetch("http://localhost:3000/contact", {
+    const response = await fetch(`${BaseUrl}/contact`, {
       method: "POST",
       headers: {
         "Content-Type": "application/json",

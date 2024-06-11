@@ -6,6 +6,7 @@ import { useNavigate } from "react-router-dom";
 import { useAuth } from "../storage/auth";
 import { toast } from 'react-toastify'
 import LoadingBar from "react-top-loading-bar";
+import { BaseUrl } from "../../baseURL";
 
 const Login = () => {
   const [user, setUser] = useState({
@@ -26,7 +27,7 @@ const Login = () => {
     setprogress(80)
     e.preventDefault();
     try {
-      const response = await fetch("http://localhost:3000/login", {
+      const response = await fetch(`${BaseUrl}/login`, {
         method: "POST",
         headers: {
           "Content-type": "application/json",
@@ -63,7 +64,7 @@ const Login = () => {
     <LoadingBar
         color='#f11946'
         progress={progress}
-        onLoaderFinished={() => setProgress(0)}
+        onLoaderFinished={() => setprogress(0)}
       />
       <div className="container-fluid vh-100 d-flex align-items-center">
         <div className="row w-100">

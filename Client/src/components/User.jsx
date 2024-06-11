@@ -2,6 +2,7 @@ import React, { useEffect, useState } from "react";
 import "./User.css";
 import { toast } from "react-toastify";
 import { useNavigate } from "react-router-dom";
+import { BaseUrl } from "../../baseURL";
 
 const User = () => {
   const [card, setCard] = useState([]);
@@ -9,7 +10,7 @@ const User = () => {
 
   const fetchUser = async () => {
     try {
-      const response = await fetch("http://localhost:3000/admin/getusers", {
+      const response = await fetch(`${BaseUrl}/admin/getusers`, {
         method: "GET",
         headers: {
           Authorization: `Bearer ${token}`,
@@ -41,7 +42,7 @@ const handleNav = (Name,Email,Phone_number,isAdmin,_id)=>{
   const deleteUser = async (id) => {
     try {
       const response = await fetch(
-        `http://localhost:3000/admin/getusers/delete/${id}`,
+        `${BaseUrl}/admin/getusers/delete/${id}`,
         {
           method: "DELETE",
           headers: {

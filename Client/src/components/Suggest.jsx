@@ -2,6 +2,7 @@ import Container from "react-bootstrap/Container";
 import Row from "react-bootstrap/Row";
 import { useEffect, useState } from "react";
 import "./Card.css"
+import { BaseUrl } from "../../baseURL";
 
 function AutoLayoutExample() {
   const [category, setcategory] = useState("");
@@ -10,7 +11,7 @@ function AutoLayoutExample() {
   const fetchprodByCat = async () => {
     try {
       const response = await fetch(
-        `http://localhost:3000/products/${category}`,
+        `${BaseUrl}/products/${category}`,
         {
           method: "GET",
         }
