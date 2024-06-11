@@ -26,7 +26,7 @@ const Login = () => {
     setprogress(80)
     e.preventDefault();
     try {
-      const response = await fetch("https://mern-stack-4ckn.onrender.com/login", {
+      const response = await fetch("http://localhost:3000/login", {
         method: "POST",
         headers: {
           "Content-type": "application/json",

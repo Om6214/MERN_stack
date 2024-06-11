@@ -32,7 +32,7 @@ const Register = () => {
     e.preventDefault();
     setprogress(progress+50)
     try {
-      const response = await fetch("https://mern-stack-4ckn.onrender.com/register", {
+      const response = await fetch("http://localhost:3000/register", {
         method: "POST",
         headers: {
           "Content-Type": "application/json",

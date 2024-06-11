@@ -4,13 +4,13 @@ import { useEffect, useState } from "react";
 import "./Card.css"
 
 function AutoLayoutExample() {
-  const [category, setcategory] = useState("all");
+  const [category, setcategory] = useState("");
   const [data, setdata] = useState([]);
 
   const fetchprodByCat = async () => {
     try {
       const response = await fetch(
-        `https://mern-stack-4ckn.onrender.com/products/${category}`,
+        `http://localhost:3000/products/${category}`,
         {
           method: "GET",
         }
