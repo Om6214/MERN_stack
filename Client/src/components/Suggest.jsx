@@ -100,7 +100,7 @@ function AutoLayoutExample() {
 
       <div className="container-fluid">
         {data.map((currEle, index) => {
-          const{prodName,prodPrice,Description,prodImg}= currEle;
+          const{prodName,prodPrice,Description,discountPrice,prodStocks,prodImg}= currEle;
           return (
             <div id="card" key={index}>
               <img id="prod" src={prodImg[0]} alt="" />
@@ -108,7 +108,8 @@ function AutoLayoutExample() {
               <p>
                 {Description}
               </p>
-              <h4>$ {prodPrice}</h4>
+              <h4>&#x20b9; <del>{prodPrice}</del> <ins>{discountPrice}</ins></h4>
+              <h6>only {prodStocks} Left</h6>
               <button className="buy-btn">Buy Now</button>
               <button className="add-to-cart-btn">Add to Cart</button>
             </div>
