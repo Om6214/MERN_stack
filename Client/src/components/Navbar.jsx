@@ -54,16 +54,16 @@ export const Navbar = () => {
             </li>
             {isLoggedIN ? (
               <>
-              <li>
-                <NavLink to="/logout" onClick={toggleMenu}>
-                  Logout
-                </NavLink>
-              </li>
-              <li>
-                <NavLink to="/admin" onClick={toggleMenu}>
-                  Admin
-                </NavLink>
-              </li>
+                <li>
+                  <NavLink to="/logout" onClick={toggleMenu}>
+                    Logout
+                  </NavLink>
+                </li>
+                <li>
+                  <NavLink to="/admin" onClick={toggleMenu}>
+                    Admin
+                  </NavLink>
+                </li>
               </>
             ) : (
               <>
