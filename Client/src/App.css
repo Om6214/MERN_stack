@@ -108,3 +108,23 @@
     height: 250px; /* Adjust this value as needed */
   }
 }
+.Top{
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+}
+.Top a{
+  background-color:rgb(0, 0, 0) ;
+  color: #fcfcfc;
+  width: 120px;
+  height: 30px;
+  text-align: center;
+  font-size: large;
+  font-weight: 700;
+  border-radius: 30px;
+  cursor: pointer;
+}
+.Top a:hover{
+  background-color: rgb(49, 46, 46);
+  color: white;
+}

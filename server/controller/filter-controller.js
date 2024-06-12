@@ -13,4 +13,17 @@ const getProdByCat = async (req, res) => {
   }
 };
 
-module.exports = { getProdByCat };
+const getProdById =async(req,res)=>{
+  try {
+    const id = req.params.id
+    const data = await Device.findById(id)
+    if(data){
+      return res.status(200).json({data})
+    }
+    return res.status(404).json({message:"product not found"})
+  } catch (error) {
+    console.log(error)
+  }
+}
+
+module.exports = { getProdByCat , getProdById};

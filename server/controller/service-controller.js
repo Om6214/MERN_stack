@@ -105,7 +105,6 @@ const updateUser = async (req, res, next) => {
     );
 
     if (updatedUser.nModified === 0) {
-      // If no document was modified, send a not found response
       return res.status(404).json({ message: "User not found or no changes made" });
     }
 
@@ -114,6 +113,7 @@ const updateUser = async (req, res, next) => {
     next(error);
   }
 };
+
 
 module.exports = updateUser;
 
