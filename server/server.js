@@ -2,7 +2,7 @@ require("dotenv").config()
 const express = require("express");
 const app = express();
 const error_middleware = require('./middleware/error-middleware')
-const PORT = 3000 || process.env.PORT;
+const PORT = 3200 || process.env.PORT;
 const connectDB = require('./utils/db')
 const cors = require("cors")
 const serviceRouter = require('./router/service-router')
@@ -14,9 +14,9 @@ const admin_router = require("./router/admin-router")
 // handling the cors error
 
 const corsOptions = {
-    origin:'http://localhost:5173',
+    origin:'*',
     methods:"GET, POST, PUT, DELETE, PATCH, HEAD",
-    credentials:true
+    credentials:false
 }
 
 app.use(cors(corsOptions)); 
