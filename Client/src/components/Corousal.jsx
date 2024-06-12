@@ -13,16 +13,16 @@ function ControlledCarousel() {
   return (
     <Carousel activeIndex={index} onSelect={handleSelect}>
       <Carousel.Item>
-        <a href="/service"><img className='d-block w-100 img-fluid' style={{height:"450px",width:"1298px"}} src="/coro1.jpeg" alt="first" /></a>
+        <a href="/service"><img className='d-block w-100 carousel-image'  src="/coro1.jpeg" alt="first" /></a>
       </Carousel.Item>
       <Carousel.Item>
-      <a href="/service"><img className='d-block w-100 img-fluid' style={{height:"450px",width:"1298px"}} src="/head.jpeg" alt="third" /></a>
+      <a href="/service"><img className='d-block w-100  carousel-image'  src="/head.jpeg" alt="third" /></a>
       </Carousel.Item>
       <Carousel.Item>
-      <a href="/service"><img className='d-block w-100 img-fluid' style={{height:"450px",width:"1298px"}} src="/ear.jpg" alt="third" /></a>
+      <a href="/service"><img className='d-block w-100  carousel-image'  src="/ear.jpg" alt="third" /></a>
       </Carousel.Item>
       <Carousel.Item>
-      <a href='/service'><img className='d-block w-100 img-fluid' style={{height:"450px",width:"1298px"}} src="/elec.png" alt="sec" /></a>
+      <a href='/service'><img className='d-block w-100 carousel-image'  src="/elec.png" alt="sec" /></a>
       </Carousel.Item>
     </Carousel>
   );

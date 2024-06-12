@@ -3,6 +3,7 @@ import Row from "react-bootstrap/Row";
 import { useEffect, useState } from "react";
 import "./Card.css"
 import { BaseUrl } from "../../baseURL";
+import '../App.css'
 
 function AutoLayoutExample() {
   const [category, setcategory] = useState("");
@@ -34,10 +35,10 @@ function AutoLayoutExample() {
       <Container
         id="info"
         className="d-flex justify-content-center"
-        style={{ width: "95%", marginTop: "50px" }}
+        style={{ marginTop: "50px" }}
       >
         <h1>Shop By Category</h1>
-        <Row style={{ width: "95%" }}>
+        <Row className="category-row">
           <div className="card">
             <img
               onClick={() => {

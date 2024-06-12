@@ -83,3 +83,28 @@
 .row{
   justify-content: center;
 }
+
+@media (max-width: 768px) {
+  .category-row {
+    display: flex;
+    flex-wrap: wrap;
+  }
+
+  .category-row .card {
+    flex: 1 1 calc(33.33% - 20px); /* 33.33% width minus margin */
+    box-sizing: border-box;
+    margin: 10px;
+  }
+}
+
+.carousel-image {
+  width: 100%;
+  height: 400px;
+}
+
+/* Media query to reduce the height for mobile view */
+@media (max-width: 768px) {
+  .carousel-image {
+    height: 250px; /* Adjust this value as needed */
+  }
+}
