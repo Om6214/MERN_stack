@@ -14,7 +14,7 @@ const admin_router = require("./router/admin-router")
 // handling the cors error
 
 const corsOptions = {
-    origin:'*',
+    origin:'http://localhost:3000',
     methods:"GET, POST, PUT, DELETE, PATCH, HEAD",
     credentials:false
 }
