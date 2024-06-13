@@ -1,0 +1,14 @@
+{
+    "rewrites": [
+      { "source": "/(.*)", "destination": "/" }
+    ],
+    "redirects": [
+      { "source": "/admin*", "destination": "/admin", "statusCode": 200 },
+      { "source": "/adminUser", "destination": "/adminUser", "statusCode": 200 },
+      { "source": "/adminCont", "destination": "/adminCont", "statusCode": 200 },
+      { "source": "/adminService", "destination": "/adminService", "statusCode": 200 },
+      { "source": "/admin/users/edit", "destination": "/admin/users/edit", "statusCode": 200 },
+      { "source": "/cart", "destination": "/cart", "statusCode": 200 }
+    ]
+  }
+  
