@@ -1,5 +1,6 @@
 import React, { useEffect, useState } from "react";
 import "./Cart.css";
+import baseUrl from "../../baseURL"
 
 const Cart = () => {
   const [products, setProducts] = useState([]);
@@ -9,7 +10,7 @@ const Cart = () => {
     try {
       const fetchedProducts = await Promise.all(
         prodIds.map(async (curId) => {
-          const response = await fetch(`http://localhost:3000/cart/${curId}`);
+          const response = await fetch(`${baseUrl}/cart/${curId}`);
           if (!response.ok) {
             throw new Error(`Failed to fetch product with ID: ${curId}`);
           }
