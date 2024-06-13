@@ -14,9 +14,9 @@ const admin_router = require("./router/admin-router")
 // handling the cors error
 
 const corsOptions = {
-    origin:'https://ecom-7y5gh0gc6-om6214s-projects.vercel.app',
+    origin:'*',
     methods:"GET, POST, PUT, DELETE, PATCH, HEAD",
-    credentials:true
+    credentials:false
 }
 
 app.use(cors(corsOptions)); 
