@@ -3,7 +3,7 @@
 Gadget Grooves - E-com website
 
 ## Features
-- Live Preview @
+- Live Preview @ https://ommecomm-ptc782tlh-om6214s-projects.vercel.app/
 - Free to use
 
 ## Tech Stack
