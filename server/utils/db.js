@@ -10,6 +10,6 @@ const connectDB = async()=>{
         console.log(error)
     }
 }
-// OpZX6D0O5RNFjnbH
+
 
 module.exports=connectDB
