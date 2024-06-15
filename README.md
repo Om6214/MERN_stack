@@ -18,7 +18,7 @@ Gadget Grooves - E-com website
 ## How to use
 1. Clone the repo
 ``` bash
-git clone https://your-repo-url.git
+git clone https://github.com/Om6214/MERN_stack.git
 ```
 
 2. Install dependencies
