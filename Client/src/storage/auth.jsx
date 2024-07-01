@@ -65,7 +65,7 @@ export const AuthProvider = ({ children }) => {
     getServices()
     userAuthentication()
     adminAuth()
-  },[])
+  },[token])
 
   const isLoggedIN = !!token;
 
